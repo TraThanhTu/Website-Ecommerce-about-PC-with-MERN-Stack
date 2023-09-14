@@ -17,3 +17,59 @@ header a {
   font-weight: bold;
   text-decoration: none;
 }
+main {
+  padding: 1rem;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product {
+  border: 1px #404040 solid;
+  margin: 1rem;
+}
+
+.product img {
+  width: 400px;
+  height: 500px;
+  max-width: 470px;
+}
+.product-info {
+  padding: 1rem;
+}
+
+/* slide for header */
+
+.slider-header {
+  overflow: hidden;
+}
+.slides-header {
+  display: flex;
+}
+.slides-header input {
+  display: none;
+}
+.slide {
+  transition: 2s;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0%;
+}
+#radio2:checked ~ .first {
+  margin-left: -100%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -200%;
+}
+
+.slide img {
+  width: 1511px;
+  height: 52px;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
