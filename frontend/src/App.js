@@ -26,7 +26,7 @@ function App() {
         </div> */}
 
         <header>
-          <Navbar bg="dark" variant="dark">
+          <Navbar className="bg-color" variant="dark">
             <Container>
               <LinkContainer to="/">
                 <Navbar.Brand>Heaven Gaming</Navbar.Brand>

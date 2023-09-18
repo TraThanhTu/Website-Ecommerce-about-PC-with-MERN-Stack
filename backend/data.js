@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      name: 'PC',
+      name: 'PC1',
       slug: 'PC1',
       category: '250',
       image: '/images/pc1.jpg',
@@ -13,7 +13,7 @@ const data = {
       description: 'high',
     },
     {
-      name: 'PC',
+      name: 'PC2',
       slug: 'PC2',
       category: '350',
       image: '/images/pc2.jpg',
@@ -25,7 +25,7 @@ const data = {
       description: 'high',
     },
     {
-      name: 'PC',
+      name: 'PC3',
       slug: 'PC3',
       category: '450',
       image: '/images/pc3.jpg',
@@ -37,7 +37,7 @@ const data = {
       description: 'high',
     },
     {
-      name: 'PC',
+      name: 'PC4',
       slug: 'PC4',
       category: '250',
       image: '/images/pc4.jpg',

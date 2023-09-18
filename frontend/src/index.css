@@ -10,6 +10,9 @@ body {
 .site-container {
   min-height: 100vh;
 }
+.bg-color {
+  background-color: #ff0000;
+}
 main {
   flex: 1;
 }
@@ -24,9 +27,9 @@ main {
 }
 
 .product img {
-  width: 400px;
-  height: 500px;
-  max-width: 470px;
+  width: 250px;
+  height: 300px;
+  max-width: 300px;
 }
 .product-info {
   padding: 1rem;
@@ -65,4 +68,12 @@ main {
 
 .navigation-auto div:not(:last-child) {
   margin-right: 40px;
+}
+.btn-primary {
+  background-color: #ff0000;
+  color: white;
+  text-align: center;
+}
+.btn-primary:hover {
+  /* background-color: crimson; */
 }
