@@ -83,3 +83,18 @@ main {
 .rating span {
   color: green;
 }
+.bg-cart {
+  background-color: #fdd835;
+}
+.nav-link {
+  color: white;
+  font-size: 20px;
+}
+.cart {
+  margin-left: 5px;
+  background-color: #fdd835;
+  font-size: 15px;
+  padding-bottom: 5px;
+  color: black;
+  border: 3px solid white;
+}

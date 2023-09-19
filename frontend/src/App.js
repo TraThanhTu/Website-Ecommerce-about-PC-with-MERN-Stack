@@ -4,7 +4,14 @@ import ProductSreen from './screens/ProductScreen';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
+import Badge from 'react-bootstrap/esm/Badge';
+import Nav from 'react-bootstrap/esm/Nav';
+import { useContext } from 'react';
+import { Store } from './Store';
+
 function App() {
+  const { state } = useContext(Store);
+  const { cart } = state;
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -31,6 +38,15 @@ function App() {
               <LinkContainer to="/">
                 <Navbar.Brand>Heaven Gaming</Navbar.Brand>
               </LinkContainer>
+              <Nav className="me-auto"></Nav>
+              <Link to="/cart" className="nav-link">
+                Cart
+                {cart.cartItems.length > 0 && (
+                  <Badge className="cart" pill bg="warning">
+                    {cart.cartItems.length}
+                  </Badge>
+                )}
+              </Link>
             </Container>
           </Navbar>
         </header>
