@@ -74,6 +74,12 @@ main {
   color: white;
   text-align: center;
 }
-.btn-primary:hover {
-  /* background-color: crimson; */
+/* .btn-primary:hover {
+  background-color: crimson;
+} */
+.img-large {
+  max-width: 100%;
+}
+.rating span {
+  color: green;
 }

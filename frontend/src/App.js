@@ -35,7 +35,7 @@ function App() {
           </Navbar>
         </header>
         <main>
-          <Container>
+          <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductSreen />} />
               <Route path="/" element={<HomeScreen />} />
