@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'PC1',
       slug: 'PC1',
       category: '250',
@@ -13,6 +14,7 @@ const data = {
       description: 'high',
     },
     {
+      _id: '2',
       name: 'PC2',
       slug: 'PC2',
       category: '350',
@@ -25,6 +27,7 @@ const data = {
       description: 'high',
     },
     {
+      _id: '3',
       name: 'PC3',
       slug: 'PC3',
       category: '450',
@@ -37,6 +40,7 @@ const data = {
       description: 'high',
     },
     {
+      _id: '4',
       name: 'PC4',
       slug: 'PC4',
       category: '250',

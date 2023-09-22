@@ -43,7 +43,7 @@ function App() {
                 Cart
                 {cart.cartItems.length > 0 && (
                   <Badge className="cart" pill bg="warning">
-                    {cart.cartItems.length}
+                    {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                   </Badge>
                 )}
               </Link>
