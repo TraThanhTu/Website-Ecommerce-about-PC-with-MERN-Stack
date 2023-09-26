@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.site-container {
+  min-height: 100vh;
+}
+.bg-color {
+  background-color: #ff0000;
+}
+main {
+  flex: 1;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product {
+  border: 1px #404040 solid;
+  margin: 1rem;
+}
+
+.product img {
+  width: 250px;
+  height: 300px;
+  max-width: 300px;
+}
+.product-info {
+  padding: 1rem;
+}
+
+/* slide for header */
+
+.slider-header {
+  overflow: hidden;
+}
+.slides-header {
+  display: flex;
+}
+.slides-header input {
+  display: none;
+}
+.slide {
+  transition: 2s;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0%;
+}
+#radio2:checked ~ .first {
+  margin-left: -100%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -200%;
+}
+
+.slide img {
+  width: 1511px;
+  height: 52px;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+.btn-primary {
+  background-color: #ff0000;
+  color: white;
+  text-align: center;
+}
+/* .btn-primary:hover {
+  background-color: crimson;
+} */
+.img-large {
+  max-width: 100%;
+}
+.rating span {
+  color: green;
+}
+.bg-cart {
+  background-color: #fdd835;
+}
+.nav-link {
+  color: white;
+  font-size: 20px;
+}
+.cart {
+  margin-left: 5px;
+  background-color: #fdd835;
+  font-size: 15px;
+  padding-bottom: 5px;
+  color: black;
+  border: 3px solid white;
+}
