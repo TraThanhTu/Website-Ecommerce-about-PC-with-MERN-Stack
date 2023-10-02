@@ -9,7 +9,8 @@ import Nav from 'react-bootstrap/esm/Nav';
 import { useContext } from 'react';
 import { Store } from './Store';
 
-import CartScreen from './screens/CartScreen'; {/* Van Ty */}
+import CartScreen from './screens/CartScreen'; 
+import SigninScreen from './screens/SigninScreen';
 
 
 
@@ -40,7 +41,7 @@ function App() {
           <Navbar className="bg-color" variant="dark">
             <Container>
               <LinkContainer to="/">
-                <Navbar.Brand>Heaven Gaming</Navbar.Brand>
+                <Navbar.Brand>MAKEINHE4VEN</Navbar.Brand>
               </LinkContainer>
               <Nav className="me-auto"></Nav>
               <Link to="/cart" className="nav-link">
@@ -62,6 +63,8 @@ function App() {
 
               {/* Van Ty*/}
               <Route path="/cart" element={<CartScreen />} />
+              <Route path="/signin" element={<SigninScreen />} />
+
               {/*---------*/}
 
             </Routes>
