@@ -98,3 +98,7 @@ main {
   color: black;
   border: 3px solid white;
 }
+
+.img-thumbnail {
+  height: 80px;
+}

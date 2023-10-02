@@ -9,6 +9,10 @@ import Nav from 'react-bootstrap/esm/Nav';
 import { useContext } from 'react';
 import { Store } from './Store';
 
+import CartScreen from './screens/CartScreen'; {/* Van Ty */}
+
+
+
 function App() {
   const { state } = useContext(Store);
   const { cart } = state;
@@ -55,6 +59,11 @@ function App() {
             <Routes>
               <Route path="/product/:slug" element={<ProductSreen />} />
               <Route path="/" element={<HomeScreen />} />
+
+              {/* Van Ty*/}
+              <Route path="/cart" element={<CartScreen />} />
+              {/*---------*/}
+
             </Routes>
           </Container>
         </main>
