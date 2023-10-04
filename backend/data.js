@@ -1,7 +1,33 @@
+import bcrypt from 'bcrypt';
+
+
+
 const data = {
+
+  users: [
+    {
+      name: 'NguyenVanTy',
+      email: 'nguyenvanty@example.com',
+      password: bcrypt.hashSync('nguyenvanty', 10),
+      isAdmin: true,
+    },
+    {
+      name: 'TraThanhTu',
+      email: 'trathanhtu@example.com',
+      password: bcrypt.hashSync('trathanhtu', 10),
+      isAdmin: true,
+    },
+    {
+      name: 'person1',
+      email: 'person1@example.com',
+      password: bcrypt.hashSync('person1', 10),
+      isAdmin: false,
+    },
+  ],
+
   products: [
     {
-      _id: '1',
+      // _id: '1',
       name: 'PC1',
       slug: 'PC1',
       category: '250',
@@ -14,7 +40,7 @@ const data = {
       description: 'high',
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'PC2',
       slug: 'PC2',
       category: '350',
@@ -27,7 +53,7 @@ const data = {
       description: 'high',
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'PC3',
       slug: 'PC3',
       category: '450',
@@ -40,7 +66,7 @@ const data = {
       description: 'high',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'PC4',
       slug: 'PC4',
       category: '250',

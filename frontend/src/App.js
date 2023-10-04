@@ -41,7 +41,7 @@ function App() {
           <Navbar className="bg-color" variant="dark">
             <Container>
               <LinkContainer to="/">
-                <Navbar.Brand>MAKEINHE4VEN</Navbar.Brand>
+                <Navbar.Brand>HEAVENGAMMING</Navbar.Brand>
               </LinkContainer>
               <Nav className="me-auto"></Nav>
               <Link to="/cart" className="nav-link">
