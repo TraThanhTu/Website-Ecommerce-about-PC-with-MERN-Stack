@@ -13,6 +13,7 @@ import { useContext } from 'react';
 import { Store } from './Store';
 import CartScreen from './screens/CartScreen'; 
 import SigninScreen from './screens/SigninScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
 
 
 
@@ -23,7 +24,9 @@ function App() {
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
-  }
+    localStorage.clear('shippingAddress');
+  };
+  
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -91,13 +94,15 @@ function App() {
           <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductSreen />} />
-              <Route path="/" element={<HomeScreen />} />
+              
 
               {/* Van Ty*/}
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
-
+              <Route path="/shipping" element={<ShippingAddressScreen />} />
+              
               {/*---------*/}
+              <Route path="/" element={<HomeScreen />} />
 
             </Routes>
           </Container>
