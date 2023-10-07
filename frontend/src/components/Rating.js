@@ -1,4 +1,5 @@
 function Rating(props) {
+  // eslint-disable-next-line
   const { rating, numReviews } = props;
   return (
     <div className="rating">
