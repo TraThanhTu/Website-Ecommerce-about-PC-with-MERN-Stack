@@ -70,7 +70,7 @@ main {
   margin-right: 40px;
 }
 .btn-primary {
-  background-color: #ff0000;
+  background-color: #0d5a32;
   color: white;
   text-align: center;
 }
@@ -112,6 +112,9 @@ main {
 }
 
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid rgb(27, 227, 27);
-  color: rgb(27, 227, 27);
+  border-bottom: 0.2rem solid rgb(29, 168, 29);
+  color: rgb(26, 181, 26);
+}
+.no-decoration {
+  text-decoration: none;
 }
