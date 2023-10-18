@@ -111,6 +111,9 @@ function App() {
               <Route path="/shipping" element={<ShippingAddressScreen />} ></Route>
               <Route path="/payment" element={<PaymentMethodScreen />} > </Route>
               
+              <Route path="/placeorder" element={<PlaceOrderScreen />} />
+
+              
               {/*---------*/}
               <Route path="/" element={<HomeScreen />} />
 
