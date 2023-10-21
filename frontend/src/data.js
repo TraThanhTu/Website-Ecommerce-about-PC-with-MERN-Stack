@@ -3,7 +3,7 @@ const data = {
     {
       name: 'PC',
       slug: 'PC1',
-      category: '250',
+      category: 'Từ 205',
       image: '/images/pc1.jpg',
       price: 120,
       countInStock: 10,
