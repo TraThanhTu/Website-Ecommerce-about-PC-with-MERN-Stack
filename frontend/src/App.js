@@ -11,13 +11,14 @@ import Nav from 'react-bootstrap/esm/Nav';
 import NavDropdown from 'react-bootstrap/esm/NavDropdown';
 import { useContext } from 'react';
 import { Store } from './Store';
-import CartScreen from './screens/CartScreen'; 
+import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SignupScreen from './screens/SignupScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
+import OrderHistoryScreen from './screens/OrderHistoryScreen';
 
 
 
@@ -31,7 +32,7 @@ function App() {
     localStorage.clear('shippingAddress');
     localStorage.clear('paymentMethod');
   };
-  
+
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -53,43 +54,50 @@ function App() {
         </div> */}
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar className="bg-color" variant="dark">
+          <Navbar className="bg-color" variant="dark" expand="lg">
             <Container>
               <LinkContainer to="/">
                 <Navbar.Brand>HEAVENGAMMING</Navbar.Brand>
               </LinkContainer>
-              <Nav className="me-auto"></Nav>
-              <Link to="/cart" className="nav-link">
-                Cart
-                {cart.cartItems.length > 0 && (
-                  <Badge className="cart" pill bg="warning">
-                    {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-                  </Badge>
-                )}
-              </Link>
-
-              {userInfo ? (
-                <NavDropdown title={userInfo.name} id='basic-nav-dropdown'>
-
-                  <LinkContainer to="/profile">
-                    <NavDropdown.Item>User profile</NavDropdown.Item>
-                  </LinkContainer>
-
-                  <LinkContainer to="/orderhistory">
-                    <NavDropdown.Item>Order history</NavDropdown.Item>
-                  </LinkContainer>
-
-                  <NavDropdown.Divider />
-                  <Link className='dropdown-item' to="#signout" onClick={signoutHandler}>
-                    Sign out
+              <Navbar.Toggle aria-controls='basic-navbar-nav' />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto w-100 justify-content-end">
+                  <Link to="/cart" className="nav-link">
+                    Cart
+                    {cart.cartItems.length > 0 && (
+                      <Badge className="cart" pill bg="warning">
+                        {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                      </Badge>
+                    )}
                   </Link>
 
-                </NavDropdown>
-              ):(
-                <Link className="nav-link" to='/signin'>
-                Sign In
-                </Link>
-              ) }
+                  {userInfo ? (
+                    <NavDropdown title={userInfo.name} id='basic-nav-dropdown'>
+
+                      <LinkContainer to="/profile">
+                        <NavDropdown.Item>User profile</NavDropdown.Item>
+                      </LinkContainer>
+
+                      <LinkContainer to="/orderhistory">
+                        <NavDropdown.Item>Order history</NavDropdown.Item>
+                      </LinkContainer>
+
+                      <NavDropdown.Divider />
+                      <Link className='dropdown-item' to="#signout" onClick={signoutHandler}>
+                        Sign out
+                      </Link>
+
+                    </NavDropdown>
+                  ) : (
+                    <Link className="nav-link" to='/signin'>
+                      Sign In
+                    </Link>
+                  )}
+
+                </Nav>
+              </Navbar.Collapse>
+
+
 
 
             </Container>
@@ -99,7 +107,7 @@ function App() {
           <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductSreen />} />
-              
+
 
               {/* Van Ty*/}
               <Route path="/cart" element={<CartScreen />} />
@@ -107,13 +115,14 @@ function App() {
               <Route path="/signup" element={<SignupScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route path="/order/:id" element={<OrderScreen />} ></Route>
+              <Route path="/orderhistory" element={<OrderHistoryScreen />} ></Route>
 
               <Route path="/shipping" element={<ShippingAddressScreen />} ></Route>
               <Route path="/payment" element={<PaymentMethodScreen />} > </Route>
-              
+
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
 
-              
+
               {/*---------*/}
               <Route path="/" element={<HomeScreen />} />
 
