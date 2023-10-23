@@ -131,6 +131,7 @@ main {
 }
 .no-decoration {
   text-decoration: none;
+  list-style: none;
 }
 
 /* sidebar */
@@ -166,4 +167,13 @@ main {
 }
 .active-nav{
   left: 0;
+}
+.text-bold{
+  font-weight: bold;
+}
+ul {
+  list-style: none;
+}
+.link-items{
+  color:black;
 }
