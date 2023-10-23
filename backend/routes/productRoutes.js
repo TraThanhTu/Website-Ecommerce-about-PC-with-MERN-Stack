@@ -23,10 +23,16 @@ productRouter.get('/search', expressAsyncHandler(async (req, res) => {
   const queryFilter =
     searchQuery && searchQuery !== 'all'
       ? {
-        name: {
-          $regex: searchQuery,
-          $options: 'i',
-        },
+        $or: [
+          { name: { $regex: searchQuery, $options: 'i' } },
+          {
+            price: isNaN(searchQuery) ? undefined : Number(searchQuery),
+          },
+          { brand: { $regex: searchQuery, $options: 'i' } },
+          {
+            rating: isNaN(searchQuery) ? undefined : Number(searchQuery),
+          },
+        ],
       }
       : {};
 
