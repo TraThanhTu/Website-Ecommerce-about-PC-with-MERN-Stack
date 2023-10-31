@@ -87,7 +87,8 @@ export default function SearchScreen() {
     const navigate = useNavigate();
     const { search } = useLocation();
     const sp = new URLSearchParams(search); // /search?category=450
-
+    const name = sp.get('name') || 'all';
+    const brand = sp.get('brand') || 'all';
     const category = sp.get('category') || 'all';
     const query = sp.get('query') || 'all';
     const price = sp.get('price') || 'all';
@@ -104,7 +105,7 @@ export default function SearchScreen() {
         const fetchData = async () => {
             try {
                 const { data } = await axios.get(
-                    `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
+                    `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}&name=${name}&brand=${brand}`
                 );
                 dispatch({ type: 'FETCH_SUCCESS', payload: data });
             } catch (err) {
@@ -116,7 +117,7 @@ export default function SearchScreen() {
             }
         };
         fetchData();
-    }, [category, error, order, page, price, query, rating]);
+    }, [category, error, order, page, price, query, rating, name, brand]);
 
     const [categories, setCategories] = useState([]);
     useEffect(() => {
@@ -152,7 +153,7 @@ export default function SearchScreen() {
                     <ul>
                         <li>
                             <Link
-                                className={'all' === category  ? 'text-bold link-items' : 'link-items'}
+                                className={'all' === category ? 'text-bold link-items' : 'link-items'}
                                 to={getFilterUrl({ category: 'all' })}
                                 style={{ textDecoration: 'none' }}
                             >
@@ -217,7 +218,7 @@ export default function SearchScreen() {
                             <Link
                                 className={rating === 'all' ? 'text-bold link-items' : 'link-items'}
                                 to={getFilterUrl({ rating: 'all' })}
-                                style={{ textDecoration: 'none'}}
+                                style={{ textDecoration: 'none' }}
                             >
                                 <Rating caption={' & up'} rating={0}></Rating>
                             </Link>
@@ -272,7 +273,7 @@ export default function SearchScreen() {
                             <MessageBox>No Product Found</MessageBox>
                         )}
                         <Row>
-                            {products.map((product) =>(
+                            {products.map((product) => (
                                 <Col sm={6} lg={4} className="mb-3" key={product._id}>
                                     <Product product={product}></Product>
                                 </Col>
@@ -283,7 +284,7 @@ export default function SearchScreen() {
                                 <Link
                                     key={x + 1}
                                     className="mx-1"
-                                    to={getFilterUrl({ page: x+1 })}
+                                    to={getFilterUrl({ page: x + 1 })}
                                 >
                                     <Button
                                         className={Number(page) === x + 1 ? 'text-bold link-items' : 'link-items'}

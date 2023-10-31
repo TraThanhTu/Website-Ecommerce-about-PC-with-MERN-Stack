@@ -41,6 +41,8 @@ function App() {
   };
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [names, setNames] = useState([]);
+  const [brands, setBrands] = useState([]);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -52,7 +54,30 @@ function App() {
       }
     };
     fetchCategories();
+
+    const fetchNames = async () => {
+      try {
+        const { data } = await axios.get(`/api/products/names`);
+        setNames(data);
+      } catch (err){
+        toast.error(getError(err));
+      }
+    };
+    fetchNames();
+
+    const fetchBrands = async () => {
+      try {
+        const { data } = await axios.get(`/api/products/brands`);
+        setBrands(data);
+      } catch (err){
+        toast.error(getError(err));
+      }
+    };
+    fetchBrands();
+
+
   }, []);
+
   return (
     <BrowserRouter>
       <div
@@ -94,7 +119,7 @@ function App() {
               </LinkContainer>
               <Navbar.Toggle aria-controls='basic-navbar-nav' />
               <Navbar.Collapse id="basic-navbar-nav">
-                <SearchBox/>
+                <SearchBox />
                 <Nav className="me-auto w-100 justify-content-end">
                   <Link to="/cart" className="nav-link">
                     Cart
@@ -141,17 +166,17 @@ function App() {
         <div
           className={
             sidebarIsOpen
-              ? 'active-nav side-navbar d-flex justify-conten-between flex-wrap flex-column'
+              ? 'active-nav side-navbar d-flex justify-conten-between flex-wrap flex-column sidebarPadding'
               : 'side-navbar d-flex justify-conten-between flex-wrap flex-column'
           }
         >
-          <Nav className='flex-column text-white w-100 p-2'>
+          <Nav className='flex-column text-black w-100 p-2'>
             <Nav.Item>
               <strong>Categories</strong>
             </Nav.Item>
             {categories.map((category) => (
-              <Nav.Item key={category}>
-                <LinkContainer
+              <Nav.Item key={category} >
+                <LinkContainer className="sidebarText"
                   to={{
                     pathname: '/search',
                     search: `?category=${category}`,
@@ -162,8 +187,49 @@ function App() {
                 </LinkContainer>
               </Nav.Item>
             ))}
+          </Nav>
+
+          <Nav className='flex-column text-black w-100 p-2'>
+            <Nav.Item>
+              <strong>Name</strong>
+            </Nav.Item>
+            {names.map((name) => (
+              <Nav.Item key={name}>
+                <LinkContainer className='sidebarText'
+                  to={{
+                    pathname: '/search',
+                    search: `?name=${name}`,
+                  }}
+                  onClick={() => setSidebarIsOpen(false)}
+                >
+                  <Nav.Link>{name}</Nav.Link>
+                </LinkContainer>
+              </Nav.Item>
+            ))}
 
           </Nav>
+
+          <Nav className='flex-column text-black w-100 p-2'>
+            <Nav.Item>
+              <strong>Brand</strong>
+            </Nav.Item>
+            {brands.map((brand) => (
+              <Nav.Item key={brand}>
+                <LinkContainer className="sidebarText"
+                  to={{
+                    pathname: '/search',
+                    search: `?brand=${brand}`,
+                  }}
+                  onClick={() => setSidebarIsOpen(false)}
+                >
+                  <Nav.Link>{brand}</Nav.Link>
+                </LinkContainer>
+              </Nav.Item>
+            ))}
+
+          </Nav>
+
+
         </div>
 
         <main>

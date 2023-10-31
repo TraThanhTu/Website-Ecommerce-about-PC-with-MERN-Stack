@@ -83,7 +83,7 @@ function ProductSreen() {
           ></img>
         </Col>
         <Col md={3}>
-          <ListGroup variant="flush">
+          <ListGroup variant="flush" >
             <ListGroup.Item>
               <Helmet>
                 <title>{product.name}</title>
