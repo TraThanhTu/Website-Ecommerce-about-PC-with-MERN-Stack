@@ -25,11 +25,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-// let counter = 1;
-// setInterval(function () {
-//   document.getElementById('radio' + counter).checked = true;
-//   counter++;
-//   if (counter > 3) {
-//     counter = 1;
-//   }
-// }, 5000);

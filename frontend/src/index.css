@@ -71,13 +71,12 @@ main {
 }
 .btn-primary,
 .btn-outline-primary {
-  background-color: #ff0000;
+  background-color: orange;
   color: white;
   text-align: center;
+  border: none;
 }
-/* .btn-primary:hover {
-  background-color: crimson;
-} */
+
 .img-large {
   max-width: 100%;
 }
@@ -120,20 +119,22 @@ main {
 /*sidebar*/
 .navbar-brand {
   font-weight: bold;
+  font-size: 1.5rem;
 }
 .side-navbar {
-  width: 240px;
+  width: 280px;
   height: 100%;
   position: absolute;
   left: -300px;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   transition: 0.5s;
+  color: #4b0807;
 }
 .site-container {
   transition: 0.4s;
 }
 .active-cont {
-  margin-left: 240px;
+  margin-left: 280px;
 }
 .active-nav {
   left: 0;
@@ -142,7 +143,9 @@ main {
   font-weight: bold;
 }
 .title-cate {
-  color: black;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .btn-cate {
   margin-right: 15px;
@@ -156,4 +159,29 @@ ul {
 .no-decoration {
   text-decoration: none;
   list-style: none;
+}
+
+.card-title {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+.sidebarText {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.background-cate {
+  background-color: red;
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+.card-img,
+.card-img-top {
+  width: 304px;
+  height: 304px;
 }

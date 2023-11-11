@@ -145,18 +145,24 @@ function App() {
               : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
           }
         >
-          <Nav className="flex-column text-white w-100 p-2">
-            <Nav.Item>
-              <strong className="title-cate">Categories</strong>
-            </Nav.Item>
+          <Nav className="flex-column text-white w-100">
+            <div className="background-cate">
+              <Nav.Item>
+                <strong className="title-cate">Categories</strong>
+              </Nav.Item>
+            </div>
             {categories.map((category) => (
               <Nav.Item key={category}>
-                <Link
-                  to={`/search?category=${category}`}
+                <LinkContainer
+                  className="sidebarText"
+                  to={{
+                    pathname: '/search',
+                    search: `?category=${category}`,
+                  }}
                   onClick={() => setSidebarIsOpen(false)}
                 >
                   <Nav.Link>{category}</Nav.Link>
-                </Link>
+                </LinkContainer>
               </Nav.Item>
             ))}
           </Nav>
